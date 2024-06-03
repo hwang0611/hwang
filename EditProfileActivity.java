@@ -1,6 +1,5 @@
 package com.example.servertest;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -11,14 +10,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class EditProfileActivity extends AppCompatActivity {
     EditText editUsernameEditText, editPW1EditText, editPW2EditText, editEmailEditText;
     ImageView eyeIcon3, eyeIcon4;
-    TextView editprofilebutton;
+    TextView editProfileButton;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +25,10 @@ public class EditProfileActivity extends AppCompatActivity {
         editEmailEditText = findViewById(R.id.editEmail);
         eyeIcon3 = findViewById(R.id.eye_icon1_1);
         eyeIcon4 = findViewById(R.id.eye_icon2_1);
-        editprofilebutton = findViewById(R.id.Editprofilebutton);
+        editProfileButton = findViewById(R.id.Editprofilebutton);
 
 
-        editprofilebutton.setOnClickListener(new View.OnClickListener() {
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String editusername = editUsernameEditText.getText().toString();
@@ -52,7 +47,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
 
                 EditProfile editPrfile = new EditProfile(editusername, editpw, editemail);
-
+                // 오류
                 /*Call<Void> call = apiService.edit(editPrfile);
                 call.enqueue(new Callback<Void>() {
                     @Override
